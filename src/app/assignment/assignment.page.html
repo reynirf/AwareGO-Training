@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button slot="end" color="dark" (click)="openInformationModal()">
+      <ion-button slot="end" color="light" (click)="openInformationModal()">
           <ion-icon slot="icon-only" name="help"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,16 +10,24 @@
 </ion-header>
 
 <ion-content class="ion-padding ion-text-center">
-test
+	<ion-list *ngIf="showAll">
+		<ion-item *ngFor="let challenge of challenges">
+			<ion-label>{{challenge.title}}</ion-label>
+		</ion-item>
+	</ion-list>
+	<div *ngIf="!showAll">
+		hérna verður assignmentið
+	</div>
 </ion-content>
 
-<ion-footer text-center>
+<ion-footer>
   <ion-row>
       <ion-col>
           <div class="nav-bar">
-            <ion-icon name="arrow-back-outline" class="backIcon"></ion-icon>
-            <ion-icon (click)="viewAssignments()" slot="start" name="apps-outline" class="challengesIcon"></ion-icon>
-            <ion-icon name="arrow-forward-outline" class="forwardIcon"></ion-icon>
+            <ion-icon *ngIf="!showAll" name="arrow-back-outline" class="backIcon"></ion-icon>
+            <ion-icon *ngIf="!showAll" (click)="showAll = true" slot="start" name="apps-outline" class="challengesIcon"></ion-icon>
+            <ion-icon *ngIf="showAll" (click)="showAll = false" slot="start" name="close" class="challengesIcon"></ion-icon>
+            <ion-icon *ngIf="!showAll" name="arrow-forward-outline" class="forwardIcon"></ion-icon>
           </div>
       </ion-col>
   </ion-row>

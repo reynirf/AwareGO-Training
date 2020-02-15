@@ -1,5 +1,12 @@
-ion-toolbar, ion-content {
+ion-content {
 	--background: #f0efef;
+}
+ion-toolbar {
+	--background: #ad2931;
+	color: white;
+}
+ion-footer {
+	border-top: solid 1px #e6dcdc
 }
 .nav-bar {
 	margin: 1rem;
