@@ -14,7 +14,7 @@ export class InformationComponent implements OnInit {
   	this.challenge = navParams.get('challenge')
   	if(!this.challenge) {
   		this.dismiss()
-  	} 
+  	}
   	console.log('challenge: ', this.challenge)
   }
 
