@@ -21,6 +21,10 @@ ion-content {
 ion-footer {
 	background: #f0efef;
 }
-.textCenter {
-	text-align: center;
+ion-progress-bar {
+  --progress-background: #ad2931
+}
+div.message {
+  padding-top: 1em;
+  text-align: center;
 }
