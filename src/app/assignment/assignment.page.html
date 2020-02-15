@@ -11,12 +11,15 @@
 
 <ion-content class="ion-padding ion-text-center">
 	<ion-list *ngIf="showAll">
-		<ion-item *ngFor="let challenge of challenges">
-			<ion-label>{{challenge.title}}</ion-label>
+		<ion-item (click)="openAssignment(challenge); showAll = false" *ngFor="let challenge of challenges">
+      <ion-label>{{challenge.id}}</ion-label>
+      <ion-label>{{challenge.title}}</ion-label>
 		</ion-item>
 	</ion-list>
 	<div *ngIf="!showAll">
-		hérna verður assignmentið
+    {{activeChallenge.title}}
+    <br />
+    {{activeChallenge.description}}
 	</div>
 </ion-content>
 

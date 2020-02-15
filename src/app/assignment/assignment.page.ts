@@ -16,12 +16,16 @@ export class AssignmentPage implements OnInit {
 
   public loading: boolean = false
   public showAll: boolean = false
-
+  
   public activeChallenge: any;
-  constructor(private translate: TranslateService, private modalController: ModalController) { 
-  	console.log('challenges: ', challenges)
-  	this.activeChallenge = challenges[0]
-  	this.openInformationModal()
+  public challenges: any;
+  constructor(
+    private translate: TranslateService, 
+    private modalController: ModalController, 
+    private router: Router) {
+  	  this.challenges = challenges;
+      this.activeChallenge = challenges[0];
+  	  this.openInformationModal();
   }
 
   async ngOnInit() {
@@ -31,12 +35,19 @@ export class AssignmentPage implements OnInit {
   	const modal = await this.modalController.create({
 	    component: InformationComponent,
 	    componentProps: {
-	      challenge: this.activeChallenge
+        challenge: this.activeChallenge,
 	    },
 	    showBackdrop: true,
 	    cssClass: 'info-modal'
     });
   	return await modal.present()
+  }
+
+  openAssignment(challenge: any) {
+    this.activeChallenge = challenge;
+    // this.router.navigate(['assignment']);
+    this.openInformationModal();
+    console.log(challenge);
   }
 
 }
