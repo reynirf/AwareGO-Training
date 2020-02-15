@@ -1,0 +1,18 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [scrollY]="false" padding class="textCenter">
+	<img src="/assets/img/logo.png" class="logo-png">
+	<p>{{'PIN' | translate}}</p>
+</ion-content>
+
+<ion-footer text-center>
+    <ion-row>
+        <ion-col>
+            <div class="language" (click)="changeLanguage()"><ion-icon slot="start" name="globe" class="langIcon"></ion-icon> <span class="langText"> {{ 'changeLang' | translate }} </span></div>
+        </ion-col>
+    </ion-row>
+</ion-footer>
