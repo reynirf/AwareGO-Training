@@ -45,9 +45,6 @@ ion-footer {
 ion-slides {
   --bullet-background-active:black;
 }
-.swiper-pagination-bullet {
-	background: #b30404
-}
 .startButton {
 	color: #ad2931;
 	font-size: 1.5rem;
@@ -61,8 +58,6 @@ ion-slides {
     border-radius: 1.4rem;
     --background-activated:#ad2931;
     --color-activated:white;
-      width:30%;
-    * > {
-        font-size: 1.5rem !important;
-    }
+    font-size: 0.8rem;
+    width: 25%;
 }
