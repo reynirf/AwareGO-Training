@@ -6,7 +6,9 @@
 
 <ion-content [scrollY]="false" padding class="textCenter">
 	<img src="/assets/img/logo.png" class="logo-png">
-	<p>{{'PIN' | translate}}</p>
+  <p>{{'PIN' | translate}}</p>
+  <ion-input placeholder="PIN" class="pin-input"></ion-input>
+  <ion-button expand="block" fill="solid" color="ad2931" class="enter-button">{{ 'ENTER' | translate }}</ion-button>
 </ion-content>
 
 <ion-footer text-center>
