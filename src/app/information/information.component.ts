@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-information',
@@ -8,14 +9,18 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class InformationComponent implements OnInit {
 
-
-  public challenge: any;
-  constructor(navParams: NavParams, private modalCtrl: ModalController) { 
-  	this.challenge = navParams.get('challenge')
-  	if(!this.challenge) {
+  public videoURL:string = ''
+  public assignment: any;
+  constructor(navParams: NavParams, private modalCtrl: ModalController, public sanitizer: DomSanitizer) { 
+  	this.assignment = navParams.get('assignment')
+  	if(!this.assignment) {
   		this.dismiss()
   	}
-  	console.log('challenge: ', this.challenge)
+  	if(this.assignment.videoID) {
+  		this.videoURL = 'https://www.youtube.com/embed/' + this.assignment.videoID
+  	}
+
+  	console.log('assignment: ', this.assignment)
   }
 
   ngOnInit() {}
@@ -24,4 +29,13 @@ export class InformationComponent implements OnInit {
   dismiss() {
     this.modalCtrl.dismiss();
   }
+
+  updateVideoUrl(id: string) {
+        // Appending an ID to a YouTube URL is safe.
+        // Always make sure to construct SafeValue objects as
+        // close as possible to the input data, so
+        // that it's easier to check if the value is safe.
+        let dangerousVideoUrl = 'https://www.youtube.com/embed/' + id + '?rel=0&showinfo=0';
+        return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
+	}
 }

@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header style="position:relative" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button slot="end" color="dark" (click)="dismiss()">
@@ -8,8 +8,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
-  {{challenge.title}}
-  <br />
-  {{challenge.description}}
+<ion-content class="ion-padding">
+	<div class="ion-text-center" *ngIf="assignment.videoID"style="width: 100%;height: 50%;margin: auto;">
+		<iframe frameborder="0" style="width:100%;height:100%;" [src]="updateVideoUrl(assignment.videoID)" allowfullscreen>
+		</iframe>
+	</div>
+	<h1 class="ion-text-center" *ngIf="assignment.title">{{assignment.title}}</h1>
+	<ion-text *ngIf="assignment.text" class="ion-text-wrap">
+		{{assignment.text}}
+	</ion-text>
+
 </ion-content>

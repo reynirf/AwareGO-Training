@@ -16,7 +16,8 @@ export class TutorialPage implements OnInit {
   	},
   	speed: 400,
   };
-  @ViewChild('slides') slides: IonSlides;
+
+  @ViewChild('slides', {read: [], static: true}) slides: IonSlides;
 
   constructor(private router: Router) { }
 

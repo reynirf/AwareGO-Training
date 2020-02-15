@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, TranslatePipe, LangChangeEvent } from '@ngx-translate/core';
-import { challenges } from '../../assets/challenges';
+import { data } from '../../assets/data';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
@@ -24,8 +24,8 @@ export class AssignmentPage implements OnInit {
     private translate: TranslateService, 
     private modalController: ModalController, 
     private router: Router) {
-  	  this.challenges = challenges;
-      this.activeChallenge = challenges[0];
+  	  this.challenges = data.challenges;
+      this.activeChallenge = data.challenges[0];
   	  this.openInformationModal();
   }
 
@@ -37,17 +37,17 @@ export class AssignmentPage implements OnInit {
   	const modal = await this.modalController.create({
 	    component: InformationComponent,
 	    componentProps: {
-        challenge: this.activeChallenge,
+        	assignment: data.assignment,
 	    },
 	    showBackdrop: true,
 	    cssClass: 'info-modal'
     });
-  	await modal.present()
+  	modal.present()
   	await modal.onDidDismiss();
   	this.showInfo = false
   }
 
-  openAssignment(challenge: any) {
+  openChallenge(challenge: any) {
     this.activeChallenge = challenge;
     this.showAll = false
     console.log(challenge);

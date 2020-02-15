@@ -10,17 +10,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
-	<ion-list *ngIf="showAll">
-		<ion-item (click)="openAssignment(challenge); showAll = false" *ngFor="let challenge of challenges">
-      <ion-label>{{challenge.id}}</ion-label>
-      <ion-label>{{challenge.title}}</ion-label>
-		</ion-item>
-	</ion-list>
-	<div *ngIf="!showAll && activeChallenge">
+<ion-content *ngIf="!showAll && activeChallenge" class="ion-padding ion-text-center">
+	<div>
     	<p>{{activeChallenge.title}}</p>
     	<p>{{activeChallenge.description}}</p>
 	</div>
+</ion-content>
+<ion-content *ngIf="showAll" class="ion-padding ion-text-center">
+	<ion-list>
+		<ion-item lines="none" inset="true" class="challengeItem" (click)="openChallenge(challenge); showAll = false" *ngFor="let challenge of challenges">
+      		<ion-label>{{challenge.id}}</ion-label>
+      		<ion-label>{{challenge.title}}</ion-label>
+		</ion-item>
+	</ion-list>
 </ion-content>
 
 <ion-footer>

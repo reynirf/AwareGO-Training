@@ -39,7 +39,7 @@ export class HomePage implements OnInit {
   }
 
   loadAssignment() {
-  	if(this.pin === this.constantPin) {
+  	if(this.pin.toUpperCase() === this.constantPin) {
   		this.loading = true
         this.router.navigate(['tutorial']);
   	} else {
