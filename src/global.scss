@@ -36,3 +36,10 @@
     --height: 80%;
     --border-radius: 1rem;
 }
+.swiper-pagination-bullet {
+	background: #b30404
+}
+.swiper-pagination-bullet-active {
+  width:1rem !important;
+  border-radius:5px !important;
+}

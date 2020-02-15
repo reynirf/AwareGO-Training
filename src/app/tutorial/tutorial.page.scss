@@ -7,7 +7,7 @@ ion-slides {
 }
 
 .swiper-slide h2 {
-	margin-top: 2.8rem;
+	padding-top: 40%
 }
 
 .swiper-slide img {
@@ -20,10 +20,14 @@ ion-slides {
 b {
 	font-weight: 500;
 }
-
+ion-footer ion-item {
+	--background:#f0efef
+}
+.readyText {
+	font-size:3rem;
+	padding-top:15%;
+}
 p {
-	padding: 0 40px;
-	font-size: 14px;
 	line-height: 1.5;
 	color: #414042
 }
@@ -33,4 +37,32 @@ p b {
 }
 ion-content {
 	--background: #f0efef;
+}
+ion-footer {
+    position: absolute;
+    bottom:0.5rem;
+}
+ion-slides {
+  --bullet-background-active:black;
+}
+.swiper-pagination-bullet {
+	background: #b30404
+}
+.startButton {
+	color: #ad2931;
+	font-size: 1.5rem;
+	margin-top: 30%;
+}
+.primaryAction, .primaryAction:focus, .primaryAction:focus-within, .primaryAction:visited, .primaryAction:active, .primaryAction:hover {
+    background:#ad2931;
+    color:white;
+    --color:white;
+  	box-shadow:none;
+    border-radius: 1.4rem;
+    --background-activated:#ad2931;
+    --color-activated:white;
+      width:30%;
+    * > {
+        font-size: 1.5rem !important;
+    }
 }

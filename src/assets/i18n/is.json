@@ -1,6 +1,8 @@
 {
-	"PIN": "PIN NÚMER (TEST)",
     "changeLang": "English",
     "pin_unavailable": "Ekkert verkefni undir þessu PIN númeri",
-    "ENTER": "Byrja"
+    "ENTER": "Byrja",
+    "next": "Næsta",
+    "start_assignment": "Hefja verkefni",
+    "ready_to_go": "Tilbúin/n í orustu gegn netþrjótum?"
 }

@@ -1,5 +1,5 @@
-<ion-content lass="ion-padding" class="ion-padding ion-text-center"fullscreen [scrollY]="false">
-	<ion-slides>
+<ion-content class="ion-padding ion-text-center"fullscreen [scrollY]="false">
+	<ion-slides #slides pager="true" [options]="slideOpts">
 
         <ion-slide>
           <div class="slide">
@@ -7,24 +7,39 @@
             <h2>Welcome</h2>
             <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code use.</p>
           </div>
+            <ion-footer>
+				<ion-item lines="none">
+				  <ion-button size="default" class="primaryAction" slot="end" color="light" fill="clear" (click)="next()">{{'next' | translate }}</ion-button>
+				</ion-item>
+	  		</ion-footer>
         </ion-slide>
 
         <ion-slide>
           <img src="./slide-2.png"/>
           <h2>What is Ionic?</h2>
           <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.</p>
+           <ion-footer>
+				<ion-item lines="none">
+				  <ion-button size="default" class="primaryAction" slot="end" color="light" fill="clear" (click)="next()">{{'next' | translate }}</ion-button>
+				</ion-item>
+	  		</ion-footer>
         </ion-slide>
 
         <ion-slide>
           <img src="./slide-3.png"/>
           <h2>What is Ionic Appflow?</h2>
           <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
+           <ion-footer>
+				<ion-item lines="none">
+				  <ion-button size="default" class="primaryAction" slot="end" color="light" fill="clear" (click)="next()">{{'next' | translate }}</ion-button>
+				</ion-item>
+	  		</ion-footer>
         </ion-slide>
 
         <ion-slide>
           <img src="./slide-4.png"/>
-          <h2>Ready to Play?</h2>
-          <ion-button (click)="assignment()" fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+          <h1 class="readyText">{{'ready_to_go' | translate}}</h1>
+           <ion-button class="startButton" (click)="assignment()" fill="clear">{{'start_assignment' | translate }} <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
         </ion-slide>
 
       </ion-slides>
