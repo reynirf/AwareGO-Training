@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { InformationComponent } from '../information/information.component';
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 @Component({
   selector: 'app-assignment',
@@ -24,7 +25,8 @@ export class AssignmentPage implements OnInit {
   constructor(
     private translate: TranslateService, 
     private modalController: ModalController, 
-    private router: Router) {
+    private router: Router,
+    private photoViewer: PhotoViewer) {
   	  this.challenges = data.challenges;
       this.activeChallenge = data.challenges[0];
   }
@@ -51,10 +53,8 @@ export class AssignmentPage implements OnInit {
   	this.answer = id
   	if(this.activeChallenge.correctAnswer === id) {
 	  	this.activeChallenge.answer = { status: "correct", answer: id }
-  		// correct answer	
   	} else {
 	  	this.activeChallenge.answer = { status: "incorrect", answer: id }
-  		// wrong answer
   	}
   }
 
@@ -66,6 +66,10 @@ export class AssignmentPage implements OnInit {
   previousChallenge() {
   	this.answer = false
   	this.activeChallenge = this.challenges[this.activeChallenge.id - 2]
+  }
+
+  async fullScreen(img) {
+	this.photoViewer.show(img);
   }
 
   openChallenge(challenge: any) {

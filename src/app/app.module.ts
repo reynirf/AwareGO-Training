@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TranslateLoader, TranslateModule, TranslateService, TranslateStore, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UtilsService } from './utils.service'
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     HttpClient,
     UtilsService,
+    PhotoViewer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

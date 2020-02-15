@@ -13,7 +13,7 @@
 
 <ion-content *ngIf="!showAll && activeChallenge" class="ion-padding ion-text-center">
 	<div *ngIf="activeChallenge.questionType === 'multipleChoice'">
-    	<img *ngIf="activeChallenge.imgSrc" class="multipleChoiceImg" [src]="activeChallenge.imgSrc" />
+    	<img (click)="fullScreen(activeChallenge.imgSrc)" *ngIf="activeChallenge.imgSrc" class="multipleChoiceImg" [src]="activeChallenge.imgSrc" />
     	<p>{{activeChallenge.question}}</p>
     	<ion-list>
 			<ion-item lines="none" [ngClass]="{'correctOption': activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer === option.id, 'wrongOption': (answer === option.id || activeChallenge.answer.answer === option.id) && (activeChallenge.answer.status === 'incorrect')}" [disabled]="answer === activeChallenge.correctAnswer || activeChallenge.answer.status === 'correct'" class="option" (click)="answerChallenge(option.id)" *ngFor="let option of activeChallenge.options">
