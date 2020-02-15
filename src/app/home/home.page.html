@@ -6,7 +6,6 @@
 
 <ion-content [scrollY]="false" class="ion-text-center ion-padding">
 	<img src="/assets/img/logo.png" class="logo-png">
-  <p>{{'PIN' | translate}}</p>
   <ion-input [(ngModel)]="pin" placeholder="PIN" class="pin-input"></ion-input>
   <ion-button expand="block" (click)="loadAssignment()" fill="solid" color="ad2931" class="enter-button">{{ 'ENTER' | translate }}</ion-button>
 </ion-content>
