@@ -23,7 +23,7 @@ export class HomePage implements OnInit {
     private platform: Platform,
     private utils: UtilsService,
     private router: Router
-	) { 
+	) {
 	this.translate.setDefaultLang('en')
   	const self = this
   	this.platform.ready().then(() => {
@@ -48,9 +48,6 @@ export class HomePage implements OnInit {
     	});
   	}
   }
-
-
-
 
   changeLanguage() {
   	if(this.translate.currentLang == 'is'){
