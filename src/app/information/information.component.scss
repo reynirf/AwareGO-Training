@@ -4,7 +4,19 @@ ion-content, ion-toolbar {
 h1 {
 	font-size: 1.2rem;
 	margin-top: 0;
+	margin-bottom: 1rem;
 }
 ion-text {
 	line-height: 1.5rem;
+}
+.videoContainer {
+	width: 100%;
+	height: 50%;
+	margin: auto;
+	margin-bottom: 1rem;
+	background: black;
+}
+.video {
+	width:100%;
+	height:100%;
 }

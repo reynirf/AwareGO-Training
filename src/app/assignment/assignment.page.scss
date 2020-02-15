@@ -15,6 +15,9 @@ ion-footer {
 .challengesIcon {
 	font-size: 2rem;
 }
+.option {
+	font-size: 0.9rem
+}
 .backIcon {
 	float: left;
 }
@@ -27,4 +30,29 @@ ion-footer {
 }
 ion-list {
 	background: #f0efef;
+}
+.correct {
+	color:green;
+}
+.incorrect {
+	color:red;
+}
+.challengeId {
+	padding-left: 0.5rem;
+}
+.challengeTitle {
+	padding-left: 1rem;
+}
+.multipleChoiceImg {
+	width: 78%;
+}
+.correctOption {
+	border: 0.2rem solid green
+}
+.wrongOption {
+	border: 0.2rem solid red
+}
+.optionIcon {
+	vertical-align: bottom;
+    font-size: 1rem;
 }

@@ -31,11 +31,7 @@ export class InformationComponent implements OnInit {
   }
 
   updateVideoUrl(id: string) {
-        // Appending an ID to a YouTube URL is safe.
-        // Always make sure to construct SafeValue objects as
-        // close as possible to the input data, so
-        // that it's easier to check if the value is safe.
-        let dangerousVideoUrl = 'https://www.youtube.com/embed/' + id + '?rel=0&showinfo=0';
-        return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
+    let dangerousVideoUrl = 'https://www.youtube.com/embed/' + id + '?rel=0&showinfo=0';
+    return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
 	}
 }

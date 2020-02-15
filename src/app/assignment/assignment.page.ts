@@ -16,8 +16,9 @@ export class AssignmentPage implements OnInit {
 
   public loading: boolean = false
   public showAll: boolean = false
-  public showInfo: boolean = true
+  public showInfo: boolean = false
   
+  public answer: any;
   public activeChallenge: any = [];
   public challenges: any;
   constructor(
@@ -26,7 +27,6 @@ export class AssignmentPage implements OnInit {
     private router: Router) {
   	  this.challenges = data.challenges;
       this.activeChallenge = data.challenges[0];
-  	  this.openInformationModal();
   }
 
   async ngOnInit() {
@@ -47,10 +47,31 @@ export class AssignmentPage implements OnInit {
   	this.showInfo = false
   }
 
+  answerChallenge(id) {
+  	this.answer = id
+  	if(this.activeChallenge.correctAnswer === id) {
+	  	this.activeChallenge.answer = { status: "correct", answer: id }
+  		// correct answer	
+  	} else {
+	  	this.activeChallenge.answer = { status: "incorrect", answer: id }
+  		// wrong answer
+  	}
+  }
+
+  nextChallenge() {
+  	this.answer = false
+	this.activeChallenge = this.challenges[this.activeChallenge.id]
+  }
+
+  previousChallenge() {
+  	this.answer = false
+  	this.activeChallenge = this.challenges[this.activeChallenge.id - 2]
+  }
+
   openChallenge(challenge: any) {
+  	this.answer = false
     this.activeChallenge = challenge;
     this.showAll = false
-    console.log(challenge);
   }
 
 }
