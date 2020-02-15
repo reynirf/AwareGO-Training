@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, TranslatePipe, LangChangeEvent } from '@ngx-translate/core';
+<<<<<<< HEAD
 import { challenges } from '../../assets/challenges';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+=======
+import { challenges } from '../../assets/challenges'
+import { ModalController } from '@ionic/angular';
+import { InformationComponent } from '../information/information.component';
+>>>>>>> 3c688d063cb8790c1fffa176bc8139538ad2db91
 
 @Component({
   selector: 'app-assignment',
@@ -14,30 +20,26 @@ export class AssignmentPage implements OnInit {
 
   public loading: boolean = false
 
-  constructor(
-  	private translate: TranslateService,
-    private storage: Storage, 
-    private platform: Platform,
-    private router: Router
-	) {
-	this.translate.setDefaultLang('en')
-  	const self = this
-  	this.platform.ready().then(() => {
-    	self.storage.get('lang').then((lang: string) => {
-	      self.translate.use(lang)
-	    }).catch(() => {
-	      self.translate.use('en')
-	    })
-	})
-  }
-
-  viewAssignments() {
-    this.loading = true;
-    this.router.navigate(['assignments']);
+  public activeChallenge: any;
+  constructor(private translate: TranslateService, private modalController: ModalController) { 
+  	console.log('challenges: ', challenges)
+  	this.activeChallenge = challenges[0]
+  	this.openInformationModal()
   }
 
   async ngOnInit() {
-  	console.log('challenges: ', challenges)
+  }
+
+  async openInformationModal() {
+  	const modal = await this.modalController.create({
+    component: InformationComponent,
+    componentProps: {
+      challenge: this.activeChallenge
+    },
+    showBackdrop: true,
+    cssClass: 'info-modal'
+  });
+  return await modal.present()
   }
 
 }
