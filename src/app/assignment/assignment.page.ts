@@ -16,8 +16,9 @@ export class AssignmentPage implements OnInit {
 
   public loading: boolean = false
   public showAll: boolean = false
+  public showInfo: boolean = true
   
-  public activeChallenge: any;
+  public activeChallenge: any = [];
   public challenges: any;
   constructor(
     private translate: TranslateService, 
@@ -32,6 +33,7 @@ export class AssignmentPage implements OnInit {
   }
 
   async openInformationModal() {
+  	this.showInfo = true
   	const modal = await this.modalController.create({
 	    component: InformationComponent,
 	    componentProps: {
@@ -40,13 +42,14 @@ export class AssignmentPage implements OnInit {
 	    showBackdrop: true,
 	    cssClass: 'info-modal'
     });
-  	return await modal.present()
+  	await modal.present()
+  	await modal.onDidDismiss();
+  	this.showInfo = false
   }
 
   openAssignment(challenge: any) {
     this.activeChallenge = challenge;
-    // this.router.navigate(['assignment']);
-    this.openInformationModal();
+    this.showAll = false
     console.log(challenge);
   }
 

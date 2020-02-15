@@ -2,10 +2,11 @@
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button slot="end" color="light" (click)="openInformationModal()">
-          <ion-icon slot="icon-only" name="book-outline"></ion-icon>
+          <ion-icon *ngIf="showInfo" slot="icon-only" name="book-sharp"></ion-icon>
+          <ion-icon *ngIf="!showInfo" slot="icon-only" name="book-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>assignment</ion-title>
+    <ion-title *ngIf="activeChallenge">{{activeChallenge.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,10 +17,9 @@
       <ion-label>{{challenge.title}}</ion-label>
 		</ion-item>
 	</ion-list>
-	<div *ngIf="!showAll">
-    {{activeChallenge.title}}
-    <br />
-    {{activeChallenge.description}}
+	<div *ngIf="!showAll && activeChallenge">
+    	<p>{{activeChallenge.title}}</p>
+    	<p>{{activeChallenge.description}}</p>
 	</div>
 </ion-content>
 
@@ -27,10 +27,18 @@
   <ion-row>
       <ion-col>
           <div class="nav-bar">
-            <ion-icon aria-label="Previous challenge" *ngIf="!showAll" name="arrow-back-outline" class="backIcon"></ion-icon>
-            <ion-icon *ngIf="!showAll" (click)="showAll = true" slot="start" name="list-outline" class="challengesIcon"></ion-icon>
-            <ion-icon *ngIf="showAll" (click)="showAll = false" slot="start" name="close" class="challengesIcon"></ion-icon>
-            <ion-icon aria-label="Next challenge" *ngIf="!showAll" name="arrow-forward-outline" class="forwardIcon"></ion-icon>
+          	<ion-button (click)="activeChallenge = challenges[activeChallenge.id - 2]" [disabled]="activeChallenge.id <= 1" *ngIf="!showAll && activeChallenge" aria-label="Previous challenge" fill="clear" color="dark" class="backIcon">
+            	<ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="showAll = true" *ngIf="!showAll" fill="clear" color="dark">
+            	<ion-icon class="challengesIcon" slot="start" name="list-outline"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" color="dark" *ngIf="showAll" (click)="showAll = false">
+            	<ion-icon slot="start" name="close" class="challengesIcon"></ion-icon>
+            </ion-button>
+            <ion-button (click)="activeChallenge = challenges[activeChallenge.id]" *ngIf="!showAll && activeChallenge" aria-label="Next challenge" fill="clear" color="dark" class="forwardIcon" [disabled]="activeChallenge.id >= challenges.length">
+            	<ion-icon name="arrow-forward-outline"></ion-icon>
+            </ion-button>
           </div>
       </ion-col>
   </ion-row>
