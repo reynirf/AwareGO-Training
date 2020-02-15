@@ -13,14 +13,15 @@ import { UtilsService } from './utils.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InformationComponent } from './information/information.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, InformationComponent],
+  entryComponents: [InformationComponent],
   imports: [
   	BrowserModule, 
   	IonicModule.forRoot(), 
