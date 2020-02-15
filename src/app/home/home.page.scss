@@ -8,7 +8,7 @@
   vertical-align: middle;
 }
 .language {
-	margin:1rem;
+	margin: 1rem;
 	text-align: center
 }
 .logo-png {
@@ -21,10 +21,14 @@ ion-content {
 ion-footer {
 	background: #f0efef;
 }
-ion-progress-bar {
-  --progress-background: #ad2931
+.enter-button {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ad2931;
 }
-div.message {
-  padding-top: 1em;
-  text-align: center;
+.pin-input {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 0 10px 10%;
+  color: #000;
 }

@@ -1,5 +1,6 @@
 {
 	"PIN": "PIN NUMBER (TEST)",
     "changeLang": "Íslenska",
-    "pin_unavailable": "No assignment under this PIN number"
+    "pin_unavailable": "No assignment under this PIN number",
+    "ENTER": "Start"
 }
