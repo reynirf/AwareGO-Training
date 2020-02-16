@@ -19,6 +19,7 @@ ion-footer {
 	font-size: 0.9rem;
 	border: 0.2rem solid white;
 	--background: white;
+	margin: 0.3rem
 }
 .backIcon {
 	float: left;
@@ -37,7 +38,7 @@ ion-list {
 	color:green;
 }
 .multipleChoiceQuestion {
-	margin: 0.6rem
+	margin: 1rem
 }
 .incorrect {
 	color:red;
@@ -52,7 +53,7 @@ ion-list {
 	padding-left: 1rem;
 }
 .multipleChoiceImg {
-	width: 75%;
+	width: 68%;
 }
 .correctOption {
 	border: 0.2rem solid green !important
@@ -64,9 +65,29 @@ ion-list {
 	vertical-align: bottom;
     font-size: 1rem;
 }
+.correctOptionSplit img {
+	border: 0.2rem solid green !important
+}
+.correctOptionSplit img, .wrongOptionSplit img {
+	opacity: 0.9;
+}
+.wrongOptionSplit img {
+	border: 0.2rem solid red !important
+}
+.correctOptionSplit {
+	background:green;
+	display:flex;
+}
+.wrongOptionSplit {
+	background: red;
+	display:flex;
+}
+.splitscreenContainer {
+	border: 0.2rem solid #f0efef;
+}
 .splitscreenImage {
-	width: 90%;
+	width: 100%;
+    margin: auto;
 	max-height: 200px;
-	margin: 5px;
 	border: 0.2rem solid #f0efef
 }
