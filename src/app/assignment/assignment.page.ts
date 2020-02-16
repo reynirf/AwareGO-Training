@@ -68,8 +68,8 @@ export class AssignmentPage implements OnInit {
   	this.activeChallenge = this.challenges[this.activeChallenge.id - 2]
   }
 
-  async fullScreen(img) {
-	this.photoViewer.show(img);
+  async fullScreen() {
+  	if(this.activeChallenge.onlineImgSrc) this.photoViewer.show(this.activeChallenge.onlineImgSrc);
   }
 
   openChallenge(challenge: any) {

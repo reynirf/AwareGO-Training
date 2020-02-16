@@ -11,12 +11,13 @@ const _data = {
             title: "Multiple Choice",
             description: "",
             answer: {},
-            imgSrc: '/assets/img/arion-sketchy.png',
+            imgSrc: 'assets/img/arion-sketchy.png',
+            onlineImgSrc: 'https://i.imgur.com/cpgws3l.png',
             options: [
                 { id: 1, text: 'Click "secure your account here"'},
                 { id: 2, text: 'Click "Learn more" to learn more'},
                 { id: 3, text: 'Reply the email and ask for help'},
-                { id: 4, text: 'Ignore the email, it not sent by Arion Banki'}
+                { id: 4, text: 'Ignore the email, it was not sent by Arion Banki'}
             ],
             correctAnswer: 4,
             question: "You receive this email. What do you do?",

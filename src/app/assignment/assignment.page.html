@@ -6,7 +6,7 @@
           <ion-icon *ngIf="!showInfo" slot="icon-only" name="book-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title *ngIf="activeChallenge && !showAll">{{activeChallenge.title}}</ion-title>
+    <ion-title *ngIf="activeChallenge && !showAll">{{activeChallenge.id}}. {{activeChallenge.title}}</ion-title>
     <ion-title *ngIf="showAll">{{'showAll' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,7 @@
 <ion-content *ngIf="!showAll && activeChallenge" class="ion-padding ion-text-center">
 	<div *ngIf="activeChallenge.questionType === 'multipleChoice'">
     	<img (click)="fullScreen(activeChallenge.imgSrc)" *ngIf="activeChallenge.imgSrc" class="multipleChoiceImg" [src]="activeChallenge.imgSrc" />
-    	<p>{{activeChallenge.question}}</p>
+    	<p class="multipleChoiceQuestion">{{activeChallenge.question}}</p>
     	<ion-list>
 			<ion-item lines="none" [ngClass]="{'correctOption': activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer === option.id, 'wrongOption': (answer === option.id || activeChallenge.answer.answer === option.id) && (activeChallenge.answer.status === 'incorrect')}" [disabled]="answer === activeChallenge.correctAnswer || activeChallenge.answer.status === 'correct'" class="option" (click)="answerChallenge(option.id)" *ngFor="let option of activeChallenge.options">
 				<ion-label *ngIf="answer !== option.id && (activeChallenge.answer.status === 'correct' && option.id !== activeChallenge.correctAnswer)"><ion-icon class="optionIcon" name="radio-button-off-outline"></ion-icon> {{option.text}}</ion-label>

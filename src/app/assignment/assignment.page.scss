@@ -17,7 +17,8 @@ ion-footer {
 }
 .option {
 	font-size: 0.9rem;
-	border: 0.2rem solid white
+	border: 0.2rem solid white;
+	--background: white;
 }
 .backIcon {
 	float: left;
@@ -35,6 +36,9 @@ ion-list {
 .correct {
 	color:green;
 }
+.multipleChoiceQuestion {
+	margin: 0.6rem
+}
 .incorrect {
 	color:red;
 }
@@ -45,7 +49,7 @@ ion-list {
 	padding-left: 1rem;
 }
 .multipleChoiceImg {
-	width: 76%;
+	width: 75%;
 }
 .correctOption {
 	border: 0.2rem solid green
