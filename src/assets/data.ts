@@ -37,9 +37,19 @@ const _data = {
         },
         { 
             id: 3,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
+            title: "Multiple choice",
+            description: "",
+            answer: {},
+            imgSrc: 'assets/img/Google_why_am_i_gettind_okgfo[pa.png',
+            onlineImgSrc: 'https://i.imgur.com/oh0YPZ6.png',
+            options: [
+                { id: 1, text: 'Ignore the email, it was not sent by Google'},
+                { id: 2, text: 'Download the pdf "opening hours"'},
+                { id: 3, text: 'Reply and ask for assistance'},
+                { id: 4, text: 'Forward the email to my coworkers'}],
+            correctAnswer: 1,
+            question: "You receive this email. What do you do?",
+            questionType: 'multipleChoice'
         },
         { 
             id: 4,
