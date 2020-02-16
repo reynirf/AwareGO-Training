@@ -24,6 +24,11 @@
 			</ion-item>
 		</ion-list>
 	</div>
+	<div *ngIf="activeChallenge.questionType == 'waldo'">
+		<img (click)="answerChallenge(1)" [ngClass]="{'correctOption' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 2, 'wrongOption' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 2}" src={{activeChallenge.waldoImages[0].image}} class="waldoImage">
+		<img (click)="answerChallenge(2)" [ngClass]="{'correctOption' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 1, 'wrongOption' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 1}" src={{activeChallenge.waldoImages[1].image}} class="waldoImage">
+		<p>{{activeChallenge.description}}</p>
+	</div>
 </ion-content>
 <ion-content *ngIf="showAll" class="ion-padding ion-text-center">
 	<ion-list>

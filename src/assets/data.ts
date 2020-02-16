@@ -25,9 +25,15 @@ const _data = {
         },
         { 
             id: 2,
-            title: "tesdt",
-            description: "test description",
-            answer: {}
+            title: "Waldo",
+            description: "You receive an email from your your bank regarding your account. Choose which image looks malicious.",
+            answer: {},
+            questionType: "waldo",
+            waldoImages: [
+                { id: 1, image: 'https://i.imgur.com/9JNCwKr.png' },
+                { id: 2, image: 'https://i.imgur.com/tdNrRLL.png' }
+            ],
+            correctAnswer: 1
         },
         { 
             id: 3,
