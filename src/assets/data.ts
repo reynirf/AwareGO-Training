@@ -13,6 +13,7 @@ const _data = {
             answer: {},
             imgSrc: 'assets/img/arion-sketchy.png',
             onlineImgSrc: 'https://i.imgur.com/cpgws3l.png',
+            imageWidth: '69%',
             options: [
                 { id: 1, text: 'Click "secure your account here"'},
                 { id: 2, text: 'Click "Learn more" to learn more'},
@@ -42,6 +43,7 @@ const _data = {
             answer: {},
             imgSrc: 'assets/img/Google_why_am_i_gettind_okgfo[pa.png',
             onlineImgSrc: 'https://i.imgur.com/oh0YPZ6.png',
+            imageWidth: '58%',
             options: [
                 { id: 1, text: 'Ignore the email, it was not sent by Google'},
                 { id: 2, text: 'Download the pdf "opening hours"'},
@@ -50,48 +52,6 @@ const _data = {
             correctAnswer: 1,
             question: "You receive this email. What do you do?",
             questionType: 'multipleChoice'
-        },
-        { 
-            id: 4,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 5,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 6,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 7,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 8,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 9,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
-        },
-        { 
-            id: 10,
-            title: "tesadfsfadsdt",
-            description: "test descasdfsafdsadfription",
-            answer: {}
         }
     ]
 }
