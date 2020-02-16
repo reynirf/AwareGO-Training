@@ -52,6 +52,23 @@ const _data = {
             correctAnswer: 1,
             question: "You receive this email. What do you do?",
             questionType: 'multipleChoice'
+        },
+        {
+            id: 4,
+            title: "Multiple choice",
+            description: "",
+            answer: {},
+            imgSrc: 'assets/img/good_allert_from_microsoft.png',
+            onlineImgSrc: 'https://i.imgur.com/hRuaqlX.png',
+            imageWidth: '100%',
+            options: [
+                { id: 1, text: 'Ignore the email, it was not sent by Google'},
+                { id: 2, text: 'Check your account activity'},
+                { id: 3, text: 'Reply and ask for assistance'},
+                { id: 4, text: 'Forward the email to my coworkers'}],
+            correctAnswer: 2,
+            question: "You receive this email. What do you do?",
+            questionType: 'multipleChoice'
         }
     ]
 }
