@@ -3,7 +3,7 @@ import { TranslateService, TranslatePipe, LangChangeEvent } from '@ngx-translate
 import { Storage } from '@ionic/storage'
 import { Platform } from '@ionic/angular'
 import { UtilsService } from '../utils.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,8 @@ export class HomePage implements OnInit {
     private storage: Storage, 
     private platform: Platform,
     private utils: UtilsService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
 	) {
 	this.translate.setDefaultLang('en')
   	const self = this
@@ -35,7 +36,15 @@ export class HomePage implements OnInit {
 	})
   }
 
-  ngOnInit() {
+  async ionViewDidEnter() {
+  	this.pin = ''
+  	this.route
+  		.queryParams
+  		.subscribe(params => {
+  			if(params.status === 'finished') {
+  				return this.utils.presentToast("Congratulations, you've finished the assignment!", 'top', 6000)
+  			}
+        });
   }
 
   loadAssignment() {

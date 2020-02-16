@@ -56,6 +56,12 @@ export class AssignmentPage implements OnInit {
 	  	this.answer = id
 	  	if(this.activeChallenge.correctAnswer === id) {
 		  	this.activeChallenge.answer = { status: "correct", answer: id }
+		  	let correctAnswers = this.challenges.filter((challenge) => challenge.answer.status === 'correct').length
+		  	if(correctAnswers === this.challenges.length) {
+		  		setTimeout(() => {
+		  			this.router.navigate([''], {queryParams: {status: 'finished'}})
+		  		}, 1500)
+		  	}
 	  	} else {
 		  	this.activeChallenge.answer = { status: "incorrect", answer: id }
 	  	}

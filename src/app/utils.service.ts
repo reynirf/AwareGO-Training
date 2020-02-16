@@ -6,11 +6,11 @@ export class UtilsService {
 
   constructor(private toastController: ToastController) { }
 
-  async presentToast(msg='', position) {
+  async presentToast(msg='', position, duration=2000) {
     if(!position) position = 'top'
     const toast = await this.toastController.create({
       message: msg,
-      duration: 2000,
+      duration: duration,
       position: position,
       color: 'dark'
     });
