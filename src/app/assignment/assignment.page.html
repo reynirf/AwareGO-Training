@@ -24,12 +24,16 @@
 			</ion-item>
 		</ion-list>
 	</div>
-	<div *ngIf="activeChallenge.questionType == 'splitscreen'">
-		<img (click)="answerChallenge(1)" [ngClass]="{'correctOption' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 2, 'wrongOption' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 2}" src={{activeChallenge.splitscreenImages[0].image}} class="splitscreenImage">
+	<div *ngIf="activeChallenge.questionType == 'splitscreen'" class="splitscreenContainer">
+		<div [ngClass]="{'correctOptionSplit' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 2, 'wrongOptionSplit' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 2}">
+			<img (click)="answerChallenge(1)" src={{activeChallenge.splitscreenImages[0].image}} class="splitscreenImage">
+		</div>
 		<p><ion-icon class="arrow" name="arrow-up-outline"></ion-icon></p>
 		<p>{{activeChallenge.description}}</p>
 		<p><ion-icon class="arrow" name="arrow-down-outline"></ion-icon></p>
-		<img (click)="answerChallenge(2)" [ngClass]="{'correctOption' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 1, 'wrongOption' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 1}" src={{activeChallenge.splitscreenImages[1].image}} class="splitscreenImage">
+		<div class="splitscreenContainer" [ngClass]="{'correctOptionSplit' : activeChallenge.answer.status === 'correct' && activeChallenge.answer.answer !== 1, 'wrongOptionSplit' : activeChallenge.answer.status === 'incorrect' && activeChallenge.answer.answer !== 1}">
+			<img (click)="answerChallenge(2)" src={{activeChallenge.splitscreenImages[1].image}} class="splitscreenImage">
+		</div>
 	</div>
 </ion-content>
 <ion-content *ngIf="showAll" class="ion-padding ion-text-center">

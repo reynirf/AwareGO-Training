@@ -50,12 +50,16 @@ export class AssignmentPage implements OnInit {
   }
 
   answerChallenge(id) {
-  	this.answer = id
-  	if(this.activeChallenge.correctAnswer === id) {
-	  	this.activeChallenge.answer = { status: "correct", answer: id }
+  	if(this.activeChallenge.questionType === 'splitscreen' && this.activeChallenge.answer.status === 'correct') {
+		return
   	} else {
-	  	this.activeChallenge.answer = { status: "incorrect", answer: id }
-  	}
+	  	this.answer = id
+	  	if(this.activeChallenge.correctAnswer === id) {
+		  	this.activeChallenge.answer = { status: "correct", answer: id }
+	  	} else {
+		  	this.activeChallenge.answer = { status: "incorrect", answer: id }
+	  	}
+    }
   }
 
   nextChallenge() {
