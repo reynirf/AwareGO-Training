@@ -47,6 +47,10 @@ export class HomePage implements OnInit {
         });
   }
 
+  async ngOnInit() {
+    
+  }
+
   loadAssignment() {
   	if(this.pin.toUpperCase() === this.constantPin) {
   		this.loading = true
