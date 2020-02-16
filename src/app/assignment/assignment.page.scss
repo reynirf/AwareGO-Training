@@ -55,10 +55,10 @@ ion-list {
 	width: 75%;
 }
 .correctOption {
-	border: 0.2rem solid green
+	border: 0.2rem solid green !important
 }
 .wrongOption {
-	border: 0.2rem solid red
+	border: 0.2rem solid red !important
 }
 .optionIcon {
 	vertical-align: bottom;
@@ -68,4 +68,5 @@ ion-list {
 	width: 90%;
 	max-height: 200px;
 	margin: 5px;
+	border: 0.2rem solid #f0efef
 }
