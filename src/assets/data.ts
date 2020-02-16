@@ -8,7 +8,7 @@ const _data = {
     challenges: [
         { 
             id: 1,
-            title: "Multiple Choice",
+            title: "Multiple choice",
             description: "",
             answer: {},
             imgSrc: 'assets/img/arion-sketchy.png',
@@ -25,13 +25,13 @@ const _data = {
         },
         { 
             id: 2,
-            title: "Waldo",
+            title: "Two cases, one scam",
             description: "You receive an email from your your bank regarding your account. Choose which image looks malicious.",
             answer: {},
-            questionType: "waldo",
-            waldoImages: [
-                { id: 1, image: 'https://i.imgur.com/9JNCwKr.png' },
-                { id: 2, image: 'https://i.imgur.com/tdNrRLL.png' }
+            questionType: "splitscreen",
+            splitscreenImages: [
+                { id: 1, image: 'assets/img/sketchy-arion.png' },
+                { id: 2, image: 'assets/img/safe-arion.png' }
             ],
             correctAnswer: 1
         },
